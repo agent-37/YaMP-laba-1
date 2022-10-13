@@ -2,7 +2,7 @@
 #define _LIST_H_
 #include <iostream>
 #include <string> 
-
+#include <fstream>
 using namespace std;
 
 template <typename T>
@@ -25,7 +25,8 @@ public:
 	void add_back(const T& value);
 
 	bool is_empty() const { return (head == NULL); }
-	void print() const;
+	//записывает в файл(задать заранее)
+	void print(ofstream fout, int begin_number) ;
 
 	// Очистка списка
 	void clear() {
@@ -57,14 +58,12 @@ void list<T>::add_back(const T& value) {
 }
 
 template <class T>
-void list<T>::print() const {
+void list<T>::print (ofstream fout, int begin_number)   {
 	Node<T>* tmp = head;
-	cout << "List: ";
 	while (tmp) {
-		cout << tmp->key << " ";
+		fout <<begin_number<<' '<< tmp->key ;
 		tmp = tmp->next;
 	}
-	cout << " end list." << endl;
 }
 
 
