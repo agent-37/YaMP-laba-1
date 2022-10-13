@@ -20,14 +20,15 @@ private:
 public:
 	list() : head(NULL) {}
 	~list() { clear(); }
-
+	void add_front(const T& value);
 	// добавление в  конец списка
 	void add_back(const T& value);
 
 	bool is_empty() const { return (head == NULL); }
 	//записывает в файл(задать заранее)
-	void print(ofstream fout, int begin_number) ;
+	void print(ofstream &fout, int begin_number);
 
+	bool find(const T& value);
 	// Очистка списка
 	void clear() {
 		Node<T>* tmp;
@@ -39,7 +40,19 @@ public:
 	}
 
 };
-
+template <class T>
+void list<T>::add_front(const T& value) {
+	if (is_empty()) {
+		head = new Node<T>(value);
+		head->next = NULL;
+	}
+	else
+	{
+		Node<T>* tmp = new Node<T>(value);
+		tmp->next = head;
+		head = tmp;
+	}
+}
 
 template <class T>
 void list<T>::add_back(const T& value) {
@@ -58,13 +71,22 @@ void list<T>::add_back(const T& value) {
 }
 
 template <class T>
-void list<T>::print (ofstream fout, int begin_number)   {
-	Node<T>* tmp = head;
+void list<T>::print (ofstream &fout , int begin_number)   {
+	Node<T>* tmp = head;	
 	while (tmp) {
 		fout <<begin_number<<' '<< tmp->key ;
 		tmp = tmp->next;
 	}
 }
-
+template <class T>
+bool list<T>::find(const T& value) {
+	Node<T>* tmp = head;
+	while (tmp) {
+		if (value == tmp->key)
+			return true;
+		tmp = tmp->next;
+	}
+	return false;
+}
 
 #endif // _LIST_H_
