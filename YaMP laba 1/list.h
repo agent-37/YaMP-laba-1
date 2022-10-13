@@ -25,9 +25,9 @@ public:
 	void add_back(const T& value);
 
 	bool is_empty() const { return (head == NULL); }
-	//записывает в файл(задать заранее)
+	//записывает в файл
 	void print(ofstream &fout, int begin_number);
-
+	//проверяет есть ли элемент в хеше
 	bool find(const T& value);
 	// Очистка списка
 	void clear() {

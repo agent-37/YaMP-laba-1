@@ -15,7 +15,6 @@ string hesh_cell::get_leks() {
 		 return true;
 	 return false;
  }
-
  int hesh::hesh_func(string s) {
 	 int res = 0;
 	 for (int i = 0; i < s.size(); i++)
@@ -36,8 +35,7 @@ string hesh_cell::get_leks() {
 		 count += size_cell[i];		 
 		 l[i].print(fout, count);
 	 }
- }
- 
+ } 
  bool hesh::find(int number, hesh_cell cell) {
 	 return l[number].find(cell);
  }
