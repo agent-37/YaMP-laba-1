@@ -12,7 +12,6 @@ public:
 	Node<T>* next;
 	Node(const T& value = 0) : key(value) {}
 };
-
 template <class T>
 class list {
 private:
@@ -53,7 +52,6 @@ void list<T>::add_front(const T& value) {
 		head = tmp;
 	}
 }
-
 template <class T>
 void list<T>::add_back(const T& value) {
 	if (is_empty()) {
@@ -69,7 +67,6 @@ void list<T>::add_back(const T& value) {
 
 	tmp->next = new_elem;
 }
-
 template <class T>
 void list<T>::print (ofstream &fout , int begin_number)   {
 	Node<T>* tmp = head;	

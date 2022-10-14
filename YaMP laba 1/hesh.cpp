@@ -1,20 +1,5 @@
 #include "hesh.h"
 
-string  hesh_cell:: get_type_leks() {
-	return t.first;
-}
-string hesh_cell::get_leks() {
-	return t.second;
-}
- ostream& operator << (ostream& os, hesh_cell& cell) {
-	os << cell.get_type_leks() << ' ' << cell.get_leks() << '\n';
-	return os;
-}
- bool operator ==(const hesh_cell& c1, const hesh_cell& c2) {
-	 if (c1.t.first == c2.t.first && c1.t.second == c2.t.second)
-		 return true;
-	 return false;
- }
  int hesh::hesh_func(string s) {
 	 int res = 0;
 	 for (int i = 0; i < s.size(); i++)
