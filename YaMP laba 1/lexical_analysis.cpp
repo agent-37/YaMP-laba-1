@@ -25,17 +25,19 @@ void hesh_cell::identify(string s1) {
 }
 
 void hesh_cell::delete_sign(string &s1, int i){
+	
 	s1 = s1.substr(0, i) + s1.substr(i+1,s1.size());
 }
 
 void  hesh_cell::t0(string s1, int i, bool bad_hesh){
-	if (signs.find(s1[i]) == -1 && number.find(s1[i]) == -1 && variable.find(s1[i]) == -1) {
+	
+	if (signs.find(s1[i]) == -1 && number.find(s1[i]) == -1 && variable.find(s1[i]) == -1) {		
 		delete_sign(s1, i);
 		bad_hesh = 1;
 		t0(s1, i, bad_hesh);
 		return;
 	}
-	if (signs.find(s1[i]) != -1) {
+	if (signs.find(s1[i]) != -1) {		
 		sign(s1, i + 1, bad_hesh);
 		return;
 	}
@@ -334,10 +336,13 @@ void  hesh_cell::num(string s1, int i, bool bad_hesh){
 	}
 }
 void  hesh_cell::sign(string s1, int i, bool bad_hesh) {
+
 	if (s1.size() == i) {
+	
 		t.first = "sign";
 		t.second = s1;
 		b_hesh = bad_hesh;
+		return;
 	}
 	delete_sign(s1, i);
 	bad_hesh = 1;
