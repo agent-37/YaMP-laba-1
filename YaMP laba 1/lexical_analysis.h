@@ -40,12 +40,18 @@ private:
 	void t10(string s1, int i, bool bad_hesh);
 	void t11(string s1, int i, bool bad_hesh);
 	void t12(string s1, int i, bool bad_hesh);
+	void t13(string s1, int i, bool bad_hesh);
+	void t14(string s1, int i, bool bad_hesh);
+	void t15(string s1, int i, bool bad_hesh);
+	void t16(string s1, int i, bool bad_hesh);
+	void t17(string s1, int i, bool bad_hesh);
+	void t18(string s1, int i, bool bad_hesh);	
 	void var(string s1, int i, bool bad_hesh);
 	void data(string s1, int i, bool bad_hesh);
 	void num(string s1, int i, bool bad_hesh);
 	void sign(string s1, int i, bool bad_hesh);
 	void dv(string s1, int i, bool bad_hesh);
-	void delete_sign(string &s1, int i);
+	void integer(string s1, int i, bool bad_hesh);
 };
 
-#endif // _L	EXICAL_ANALYSIS_H_
+#endif // _LEXICAL_ANALYSIS_H_
