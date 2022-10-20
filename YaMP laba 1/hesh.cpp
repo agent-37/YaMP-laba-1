@@ -13,13 +13,12 @@
 		 size_cell[number]++;
 	 }
  }
- void	hesh::print(string out){
+ void	hesh::print(ofstream& fout){
 	 int count = 0;
-	 ofstream fout(out);
-	 for (int i = 0; i < SIZE_MATRIX_HESH; i++) {
+	for (int i = 0; i < SIZE_MATRIX_HESH; i++) {
 		 count += size_cell[i];		 
 		 l[i].print(fout, count);
-	 }
+	}
  } 
  bool hesh::find(int number, hesh_cell cell) {
 	 return l[number].find(cell);

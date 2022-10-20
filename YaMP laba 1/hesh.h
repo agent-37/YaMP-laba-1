@@ -23,7 +23,7 @@ public:
 	//добавление в хеш
 	void add(hesh_cell cell);
 	//печать хеша
-	void print(string out);	
+	void print(ofstream& fout);
 	//проверяет есть ли элемент в хеше
 	bool find(int number, hesh_cell cell);
 };

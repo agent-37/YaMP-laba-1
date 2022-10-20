@@ -21,10 +21,11 @@ bool operator ==(const hesh_cell& c1, const hesh_cell& c2) {
 	return false;
 }
 void hesh_cell::identify(string s1) {
-	t0(s1, 0,0);
+	t0(s1, 0, b_hesh);
+	
 }
 
-void  hesh_cell::t0(string s1, int i, bool bad_hesh){
+void  hesh_cell::t0(string s1, int i, bool &bad_hesh){
 	
 	if (signs.find(s1[i]) == -1 && number.find(s1[i]) == -1 && variable.find(s1[i]) == -1) {	 
 		bad_hesh = 1;		
@@ -64,7 +65,7 @@ void  hesh_cell::t0(string s1, int i, bool bad_hesh){
 	}
 	var(s1, i + 1, bad_hesh);
 }
-void  hesh_cell::t1(string s1, int i, bool bad_hesh){
+void  hesh_cell::t1(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -78,7 +79,7 @@ void  hesh_cell::t1(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t2(string s1, int i, bool bad_hesh){
+void  hesh_cell::t2(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -92,7 +93,7 @@ void  hesh_cell::t2(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t3(string s1, int i, bool bad_hesh){
+void  hesh_cell::t3(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -106,7 +107,7 @@ void  hesh_cell::t3(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t4(string s1, int i, bool bad_hesh){
+void  hesh_cell::t4(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -120,7 +121,7 @@ void  hesh_cell::t4(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t5(string s1, int i, bool bad_hesh){
+void  hesh_cell::t5(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -134,7 +135,7 @@ void  hesh_cell::t5(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t6(string s1, int i, bool bad_hesh){
+void  hesh_cell::t6(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -148,7 +149,7 @@ void  hesh_cell::t6(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t7(string s1, int i, bool bad_hesh){
+void  hesh_cell::t7(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -162,7 +163,7 @@ void  hesh_cell::t7(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t8(string s1, int i, bool bad_hesh){
+void  hesh_cell::t8(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -176,7 +177,7 @@ void  hesh_cell::t8(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t9(string s1, int i, bool bad_hesh){
+void  hesh_cell::t9(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -190,7 +191,7 @@ void  hesh_cell::t9(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t10(string s1, int i, bool bad_hesh){
+void  hesh_cell::t10(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -204,7 +205,7 @@ void  hesh_cell::t10(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t11(string s1, int i, bool bad_hesh){
+void  hesh_cell::t11(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -218,7 +219,7 @@ void  hesh_cell::t11(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t12(string s1, int i, bool bad_hesh){
+void  hesh_cell::t12(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -232,7 +233,7 @@ void  hesh_cell::t12(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t13(string s1, int i, bool bad_hesh){
+void  hesh_cell::t13(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -246,7 +247,7 @@ void  hesh_cell::t13(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t14(string s1, int i, bool bad_hesh){
+void  hesh_cell::t14(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -260,7 +261,7 @@ void  hesh_cell::t14(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t15(string s1, int i, bool bad_hesh){
+void  hesh_cell::t15(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -275,7 +276,7 @@ void  hesh_cell::t15(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t16(string s1, int i, bool bad_hesh){
+void  hesh_cell::t16(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -290,7 +291,7 @@ void  hesh_cell::t16(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t17(string s1, int i, bool bad_hesh){
+void  hesh_cell::t17(string s1, int i, bool &bad_hesh){
 	
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
@@ -306,7 +307,7 @@ void  hesh_cell::t17(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::t18(string s1, int i, bool bad_hesh){
+void  hesh_cell::t18(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		var(s1, i, bad_hesh);
 		return;
@@ -320,7 +321,7 @@ void  hesh_cell::t18(string s1, int i, bool bad_hesh){
 			var(s1, i + 1, bad_hesh);
 	}
 }
-void  hesh_cell::dv(string s1, int i, bool bad_hesh){
+void  hesh_cell::dv(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		data(s1, i, bad_hesh);
 		return;
@@ -330,7 +331,7 @@ void  hesh_cell::dv(string s1, int i, bool bad_hesh){
 	else 		 
 		bad_hesh = 1;	
 }
-void  hesh_cell::var(string s1, int i, bool bad_hesh){
+void  hesh_cell::var(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		t.first = "var";
 		t.second = s1;
@@ -342,7 +343,7 @@ void  hesh_cell::var(string s1, int i, bool bad_hesh){
 	else 
 		bad_hesh = 1;
 }
-void  hesh_cell::data(string s1, int i, bool bad_hesh){
+void  hesh_cell::data(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		t.first = "data";
 		t.second = s1;
@@ -351,7 +352,7 @@ void  hesh_cell::data(string s1, int i, bool bad_hesh){
 	}
 	var(s1, i, bad_hesh);
 }
-void  hesh_cell::num(string s1, int i, bool bad_hesh){
+void  hesh_cell::num(string s1, int i, bool &bad_hesh){
 	if (s1.size() == i) {
 		t.first = "number";
 		t.second = s1;
@@ -363,7 +364,7 @@ void  hesh_cell::num(string s1, int i, bool bad_hesh){
 	else 
 		bad_hesh = 1;	
 }
-void  hesh_cell::sign(string s1, int i, bool bad_hesh) {
+void  hesh_cell::sign(string s1, int i, bool &bad_hesh) {
 	if (s1.size() == i) {	
 		t.first = "sign";
 		t.second = s1;
@@ -372,7 +373,7 @@ void  hesh_cell::sign(string s1, int i, bool bad_hesh) {
 	}	 
 	bad_hesh = 1;
 }
-void  hesh_cell::integer(string s1, int i, bool bad_hesh) {
+void  hesh_cell::integer(string s1, int i, bool &bad_hesh) {
 	if (s1.size() == i) {
 		t.first = "type";
 		t.second = s1;
