@@ -22,7 +22,8 @@ public:
 	void add_front(const T& value);
 	// добавление в  конец списка
 	void add_back(const T& value);
-
+	//удаление из начала списка
+	void pop_front();
 	bool is_empty() const { return (head == NULL); }
 	//записывает в файл
 	void print(ofstream &fout, int begin_number);
@@ -86,4 +87,16 @@ bool list<T>::find(const T& value) {
 	return false;
 }
 
+
+template <class T>
+void list<T>::pop_front() {
+	if (head == NULL)
+		return;
+	Node<T>* p;
+	p = head;
+	head =head->next;
+	delete p;
+		
+
+}
 #endif // _LIST_H_
