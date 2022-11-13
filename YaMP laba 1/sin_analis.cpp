@@ -374,7 +374,9 @@ void sin_analis::write_tree(ofstream& fout) {
 		}
 		help.pop();
 	}
-	if (help.size() == 0)
+	if (help.size() == 0) {
+		fout << "Program is not fully written";
 		return;
+	}
 	rek_print(fout, current.second, 0, -1);
 }
