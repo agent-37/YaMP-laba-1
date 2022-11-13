@@ -13,9 +13,12 @@ public:
 	sin_analis();
 	//По данному токену меняет возможные варианты
 	int step_anlis( hesh_cell h);
+	void write_tree(ofstream& fout);
 private:
 	//делает каждое состояние терминалом
 	void mov_to_term();
+
+	void rek_print(ofstream& fout, vector<pair<hesh_cell, vector<int> > >,int i,int tab);
 
 };
 
