@@ -5,13 +5,15 @@
 #include "sin_analis.h"
 using namespace std;
 
-bool read_s(ifstream &fin,string &s1,int &i, int &j){ 
+bool read_s(ifstream &fin,string &s1,bool fl,int &i, int &j){ 
 	bool flag = 0;
 	char ch;
 	string s;
 	while (fin.get(ch)) {
-		if (ch == EOF)
+		if (ch == EOF) {
+			i++;
 			break;
+		}
 		if (flag == 0) {
 			if (ch == ' ' || ch == '\n') 
 				if (ch == ' ') 
@@ -27,13 +29,10 @@ bool read_s(ifstream &fin,string &s1,int &i, int &j){
 			}
 		}
 		else 
-			if (ch == ' ' || ch == '\n') {					
-				if (ch == ' ') 
-					i++;
-				else {
-					i = 0;
-					j++;
-				}
+			if (ch == ' ' || ch == '\n') {	
+				i++;
+				if (ch == '\n') 
+					fl = 1;
 				break;
 			}
 			else {
@@ -52,7 +51,8 @@ int main() {
 	hesh h;		
 	sin_analis s_analis;
 	int i = 0, j = 1;
-	while (!fin.eof() && read_s(fin,s1,i,j)) {
+	bool flag = 0;
+	while (!fin.eof() && read_s(fin,s1,flag,i,j)) {
 		hesh_cell t1(s1);
 		if (t1.get_b_hesh() == 0) {
 			h.add(t1);			
@@ -64,6 +64,11 @@ int main() {
 		else {
 			fout << "Found bad lexem " << i - s1.size() << ':' << j << '\n';
 			return 0;
+		}
+		if (flag == 1) {
+			flag = 0;
+			i = 0;
+			j++;
 		}
 	}
 	s_analis.write_tree(fout);
