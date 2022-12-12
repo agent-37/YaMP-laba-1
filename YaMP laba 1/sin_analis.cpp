@@ -364,7 +364,7 @@ void sin_analis::rek_print(ofstream& fout, vector<pair<hesh_cell, vector<int> > 
 }
 
 //печатает дерево
-void sin_analis::write_tree(ofstream& fout) {
+void sin_analis::write_tree(ofstream& fout, vector<pair<hesh_cell, vector<int> > > &q12) {
 	queue<pair<deque<pair<hesh_cell, int>>, vector<pair<hesh_cell, vector<int> > > > > help = state;
 	pair<deque<pair<hesh_cell, int>>, vector<pair<hesh_cell, vector<int> > > > current;
 	while (help.size() != 0) {
@@ -378,5 +378,7 @@ void sin_analis::write_tree(ofstream& fout) {
 		fout << "Program is not fully written";
 		return;
 	}
+	q12 = current.second;
 	rek_print(fout, current.second, 0, -1);
 }
+

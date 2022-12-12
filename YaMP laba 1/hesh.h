@@ -13,9 +13,9 @@ using namespace std;
 class hesh {
 private:
 	list<hesh_cell> l[SIZE_MATRIX_HESH];
-	int size_cell[SIZE_MATRIX_HESH];
-	int hesh_func(string s);	
+	int size_cell[SIZE_MATRIX_HESH];	
 public:
+	int hesh_func(string s);
 	hesh() {
 		for (int i = 0; i < SIZE_MATRIX_HESH; i++)
 			size_cell[i] = 1;
