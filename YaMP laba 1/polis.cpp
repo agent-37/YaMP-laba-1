@@ -74,14 +74,14 @@ void polis::simple_expr(vector<pair<hesh_cell, vector<int> > >& v, int q){
 		if (v[v[q].second[0]].first.get_type_leks() == "number")
 			ans.push_back(v[v[q].second[0]].first.get_leks());
 		else {
-			string s = v[q].first.get_leks();
+			string s = v[v[q].second[0]].first.get_leks();
 			if (!var.find(var.hesh_func(v[v[q].second[0]].first.get_leks()), v[v[q].second[0]].first))
 				err.push_back("undeclared variable " + v[v[q].second[0]].first.get_leks());
-			ans.push_back(v[q].first.get_leks());
+			ans.push_back(v[v[q].second[0]].first.get_leks());
 		}
 	}
-	else 
-		expr(v,v[q].second[1]);
+	else
+		expr(v, v[q].second[1]);
 }
 void polis::expr(vector<pair<hesh_cell, vector<int> > >& v, int q){
 	if (v[q].second.size() == 3) {
